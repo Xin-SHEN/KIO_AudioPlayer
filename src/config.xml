@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>	
+	<!------------------------------------------------
+		【苏州科奥音频播放器 v1.0.0】		
+		
+		视频播放器接收UDP指令：
+			A. 【replay】 	-重头开始播放
+			B. 【play】 	-继续播放
+			C. 【stop】 	-停止播放，暗场
+			D. 【pause】 	-暂停播放/继续播放，来回切换
+			E. 【volumedown】-声音降低10%
+			F. 【volumeup】	-声音提高10%
+			
+			G. 点播:
+			   	下方【MP3Loader】中的【name】属性即为点播该歌曲的指令，如：
+			   	点播【01A序厅-主题墙.mp3】，需发送【audio1】
+			   	点播【02A序厅-电子沙盘处.mp3】，需发送【audio2】
+			   	
+			   	*该属性可更改，但必须唯一，不可重名。
+	 ------------------------------------------------->
+	  	 
+	  	 
+	<!-- UDP通信设置 ---------------------------------->
+	<UDP>	
+		<Port>9000</Port>	<!-- 监听端口号 -->
+	</UDP>	  	 
+	  	 
+	  	 
+	<!-- 程序分辨率选项 -------------------------------->
+	<Resolution> 
+		<FullScreen>false</FullScreen> 	<!-- 全屏填【true】，窗口化填【false】 -->
+		<Width>400</Width>				<!-- 程序分辨率宽度 -->
+		<Height>300</Height>			<!-- 程序分辨率高度 -->
+	</Resolution>
+	
+	
+	<!-- 视频设置 ------------------------------------->
+	<LoaderMax load="true" prependURLs="media/">	<!-- 音频文件请放置于【Media】文件夹下 -->
+		<!-- 下面视频配置中，
+			1. 【name】为标签，不要更改
+			2. 【url】填音频文件名；
+			3. 【autoPlay】是否自动播放，【true/false】；
+			3. 【repeat】重复播放次数，0为只播放一次，-1为无限循环播放；
+		-->
+		<MP3Loader name="audio1" url="01A序厅-主题墙.mp3" autoPlay="false" repeat ="-1"/>
+		<MP3Loader name="audio2" url="02A序厅-电子沙盘处.mp3" autoPlay="false" repeat ="-1"/>
+		<MP3Loader name="audio3" url="03A时光隧道.mp3" autoPlay="false" repeat ="-1"/>
+		<MP3Loader name="audio4" url="04A-发展定位是现代化核心城区.mp3" autoPlay="false" repeat ="-1"/>
+		<MP3Loader name="audio5" url="05A-中厅.mp3" autoPlay="false" repeat ="-1"/>
+		<MP3Loader name="audio6" url="06A-从产业创新集群建设.wav.mp3" autoPlay="false" repeat ="-1"/>
+		<MP3Loader name="audio7" url="07A-互动的方式体验.mp3" autoPlay="false" repeat ="-1"/>
+		<MP3Loader name="audio8" url="08A-进入VR180度影院.wav.mp3" autoPlay="false" repeat ="-1"/>
+		<MP3Loader name="audio9" url="08A-尾厅.mp3" autoPlay="false" repeat ="-1"/>
+		<MP3Loader name="audio10" url="09A-合影时.mp3" autoPlay="false" repeat ="-1"/>
+		<MP3Loader name="audio11" url="010A-领导离场.mp3" autoPlay="false" repeat ="-1"/>
+		
+	</LoaderMax>			
+</config>
